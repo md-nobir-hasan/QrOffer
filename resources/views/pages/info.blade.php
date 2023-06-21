@@ -20,8 +20,8 @@
             </div>
 
             <div class="col-md-12">
-                <label for="validationDefault02" class="form-label">Phone</label>
-                <input type="tel" name="phone" class="form-control" id="validationDefault02" placeholder="Enter your phone number where" required>
+                <label for="validationDefault02" class="form-label">Phone (+8801705644008)</label>
+                <input type="tel" name="phone" class="form-control" value="+880" id="validationDefault02" placeholder="+8801705644008" required>
             </div>
 
             <div class="col-md-12">
