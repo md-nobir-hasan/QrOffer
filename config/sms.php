@@ -64,7 +64,7 @@ return [
      | Default provider will be used during usage of facade ; SMS
      |---------------------------------------------------------------------------------------------
      */
-    'default_provider' => env('SMS_DEFAULT_PROVIDER', Ssl::class),
+    'default_provider' => env('SMS_DEFAULT_PROVIDER', Infobip::class),
     'providers' => [
         Adn::class => [
             'senderid' => env('SMS_ADN_SENDER_ID', ''),
