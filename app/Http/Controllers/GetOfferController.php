@@ -6,6 +6,7 @@ use App\Models\OfferCode;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Xenon\LaravelBDSms\Facades\SMS;
+use Twilio\Rest\Client;
 class GetOfferController extends Controller
 {
     public function qr(){
@@ -45,9 +46,13 @@ class GetOfferController extends Controller
     public function otpcheck($user_id){
         $n['user'] = User::findorFail($user_id);
         if($n['user']){
-           $sms = SMS::shoot($n['user']->phone, "Your otp from QROffer ".$n['user']->otp);
-           dd($sms);
-            return view('pages.otp',$n);
+            $account_sid = getenv("TWILIO_SID");
+            $auth_token = getenv("TWILIO_AUTH_TOKEN");
+            $twilio_number = getenv("TWILIO_NUMBER");
+
+            $client = new Client($account_sid, $auth_token);
+           $sms =  $client->messages->create($n['user']->phone, ['from' => $twilio_number, 'body' => "OTP from  QROffer ".$n['user']->otp]);
+           return view('pages.otp',$n);
         }else{
             return abort(404,"You don't login again");
         }
