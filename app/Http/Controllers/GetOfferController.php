@@ -45,7 +45,7 @@ class GetOfferController extends Controller
     public function otpcheck($user_id){
         $n['user'] = User::findorFail($user_id);
         if($n['user']){
-           $sms= SMS::shoot($n['user']->phone, "Your otp from QROffer ".$n['user']->otp);
+           $sms = SMS::shoot($n['user']->phone, "Your otp from QROffer ".$n['user']->otp);
            dd($sms);
             return view('pages.otp',$n);
         }else{
