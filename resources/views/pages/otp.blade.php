@@ -15,7 +15,7 @@
         <form class="row g-3 shadow-lg p-4 mt-4 rounded" method="POST" action="{{route('otp.match')}}">
             @csrf
             <div>
-                <h1 class="text-center">OTP: {{$user->otp}}</h1>
+                <h1 class="text-center">OTP send to {{$user->phone}}, Please check.</h1>
             </div>
             <input type="hidden" name="user_id" value="{{$user->id}}">
             <div class="col-md-12">

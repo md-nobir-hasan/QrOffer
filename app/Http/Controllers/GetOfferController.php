@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\OfferCode;
 use App\Models\User;
 use Illuminate\Http\Request;
-
+use Xenon\LaravelBDSms\Facades\SMS;
 class GetOfferController extends Controller
 {
     public function qr(){
@@ -44,8 +44,12 @@ class GetOfferController extends Controller
 
     public function otpcheck($user_id){
         $n['user'] = User::findorFail($user_id);
-        
-        return view('pages.otp',$n);
+        if($n['user']){
+            SMS::shoot($n['user']->phone, "Your otp from QROffer ".$n['user']->otp);
+            return view('pages.otp',$n);
+        }else{
+            return abort(404,"You don't login again");
+        }
     }
 
     public function otpMatch(Request $req){
