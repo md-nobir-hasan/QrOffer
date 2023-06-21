@@ -14,7 +14,7 @@ class GetOfferController extends Controller
             'code'=>$rn,
         ]);
         $app_url = env('APP_URL');
-        $n['url'] = "$app_url/qroffer/$rn";
+        $n['url'] = "$app_url/public/qroffer/$rn";
         return view('pages.qr',$n);
     }
     public function infoCollect($ofrcode){
