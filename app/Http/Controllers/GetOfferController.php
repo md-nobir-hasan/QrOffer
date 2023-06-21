@@ -35,7 +35,6 @@ class GetOfferController extends Controller
                 'phone'=>$req->phone,
                 'otp'=> $otp,
             ]);
-            // return view('pages.otp',$n);
             return redirect()->route('otpcheck',[$user->id]);
         }else{
              return abort(404);
@@ -45,6 +44,7 @@ class GetOfferController extends Controller
 
     public function otpcheck($user_id){
         $n['user'] = User::findorFail($user_id);
+        
         return view('pages.otp',$n);
     }
 

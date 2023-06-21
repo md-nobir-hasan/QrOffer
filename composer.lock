@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a824769c590d2fda68d6c03613c6c857",
+    "content-hash": "fff6d337440a448f05c0ef09b35bc626",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -5677,6 +5677,66 @@
                 "source": "https://github.com/webmozarts/assert/tree/1.11.0"
             },
             "time": "2022-06-03T18:03:27+00:00"
+        },
+        {
+            "name": "xenon/laravelbdsms",
+            "version": "v1.0.50.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/arif98741/laravelbdsms.git",
+                "reference": "71bcda178f2d669966630d5acd2bcf103e384147"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/arif98741/laravelbdsms/zipball/71bcda178f2d669966630d5acd2bcf103e384147",
+                "reference": "71bcda178f2d669966630d5acd2bcf103e384147",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "guzzlehttp/guzzle": "^6.3|^7.3",
+                "php": ">=7.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Xenon\\LaravelBDSms\\LaravelBDSmsServiceProvider"
+                    ],
+                    "aliases": {
+                        "SMS": "Xenon\\LaravelBDSms\\Facades\\SMS",
+                        "LaravelBDSms": "Xenon\\LaravelBDSms\\Facades\\SMS"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Xenon\\LaravelBDSms\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ariful islam",
+                    "email": "arif98741@gmail.com"
+                }
+            ],
+            "description": "This is package for sending sms to Bangladeshi mobile numbers using laravel application",
+            "support": {
+                "issues": "https://github.com/arif98741/laravelbdsms/issues",
+                "source": "https://github.com/arif98741/laravelbdsms/tree/v1.0.50.5"
+            },
+            "funding": [
+                {
+                    "url": "https://www.patreon.com/arif98741",
+                    "type": "patreon"
+                }
+            ],
+            "time": "2023-06-20T05:41:25+00:00"
         }
     ],
     "packages-dev": [
